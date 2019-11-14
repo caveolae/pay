@@ -12,13 +12,13 @@ class QueryCertifyGateway implements GatewayInterface
      * Query Certify
      * @param string $endpoint
      * @param array $payload
-     * @return array|string
+     * @return array
      * @throws \Yansongda\Pay\Exceptions\GatewayException
      * @throws \Yansongda\Pay\Exceptions\InvalidArgumentException
      * @throws \Yansongda\Pay\Exceptions\InvalidConfigException
      * @throws \Yansongda\Pay\Exceptions\InvalidSignException
      */
-    public function pay($endpoint, array $payload): string
+    public function pay($endpoint, array $payload): array
     {
         $payload['method'] = $this->getMethod();
         $payload['sign'] = Support::generateSign($payload);
