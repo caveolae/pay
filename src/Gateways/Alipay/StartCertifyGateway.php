@@ -8,7 +8,7 @@ use Yansongda\Pay\Log;
 class StartCertifyGateway implements GatewayInterface
 {
     /**
-     * Initialize Certify
+     * Start Certify
      * @param string $endpoint
      * @param array $payload
      * @return string

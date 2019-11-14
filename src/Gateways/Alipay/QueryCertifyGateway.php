@@ -7,11 +7,12 @@ use Yansongda\Pay\Log;
 
 class QueryCertifyGateway implements GatewayInterface
 {
+
     /**
-     * Initialize Certify
+     * Query Certify
      * @param string $endpoint
      * @param array $payload
-     * @return string
+     * @return array|string
      * @throws \Yansongda\Pay\Exceptions\GatewayException
      * @throws \Yansongda\Pay\Exceptions\InvalidArgumentException
      * @throws \Yansongda\Pay\Exceptions\InvalidConfigException
@@ -24,7 +25,9 @@ class QueryCertifyGateway implements GatewayInterface
 
         Log::info('Starting To Pay An Alipay App Order', [$endpoint, $payload]);
 
-        return Support::requestApi($payload);
+        $result = Support::requestApi($payload);
+
+        return json_decode($result, true);
     }
 
     /**

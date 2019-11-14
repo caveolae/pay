@@ -24,7 +24,9 @@ class InitializeCertifyGateway implements GatewayInterface
 
         Log::info('Starting To Pay An Alipay App Order', [$endpoint, $payload]);
 
-        return Support::requestApi($payload);
+        $result = Support::requestApi($payload);
+
+        return json_decode($result, true);
     }
 
     /**
