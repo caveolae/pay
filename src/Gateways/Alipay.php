@@ -20,6 +20,7 @@ use Yansongda\Supports\Str;
  * @method Collection scan(array $config) 扫码支付
  * @method Collection transfer(array $config) 帐户转账
  * @method Response wap(array $config) 手机网站支付
+ * @method Response WapUrl(array $config) 手机网站支付
  * @method Response web(array $config) 电脑支付
  * @method Response initializeCertify(array $config) 身份认证初始化服务
  * @method Response startCertify(array $config) 身份认证初始化服务

@@ -36,6 +36,17 @@ class PayTest extends TestCase
         'ali_public_key' => '支付宝公钥',
     ];
 
+    public function testWapUrlAlipayGateway()
+    {
+
+        $order = [
+            'test' => "ec347804143905b924d2657fbe268a59",
+        ];
+        $getUrl = Pay::alipay($this->alipayConf)->wapUrl($order);
+        print_r($getUrl);
+        $this->assertIsString($getUrl);
+    }
+
     public function testInitializeCertifyAlipayGateway()
     {
 
